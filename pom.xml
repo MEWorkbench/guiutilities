@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pt.uminho.ceb.biosystems.mew</groupId>
-  <artifactId>guiutilities</artifactId>
-  <version>0.0.1</version>
+  <artifactId>mew-guiutilities</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>guiutilities</name>
@@ -60,13 +60,6 @@
 	</plugin>
     </plugins>
   </build>
-  
-  <repositories>
-	  <repository>
-	    <id>biosystems-releases</id>
-	    <url>http://193.137.11.210/nexus/content/repositories/biosystems-releases</url>
-	  </repository>
-  </repositories>
   
   <distributionManagement>
   	<snapshotRepository>
