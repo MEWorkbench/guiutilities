@@ -4,7 +4,7 @@
 
 	<groupId>pt.uminho.ceb.biosystems.mew</groupId>
 	<artifactId>mew-guiutilities</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>guiutilities</name>
@@ -15,6 +15,10 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
+	
+	<scm>
+		<developerConnection>${project.scm.url}</developerConnection>
+	</scm>
 
 	<dependencies>
 		<dependency>
@@ -53,16 +57,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>biosystems-snapshots</id>
-			<url>http://193.137.11.210/nexus/content/repositories/biosystems-snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>biosystems-releases</id>
-			<url>http://193.137.11.210/nexus/content/repositories/biosystems-releases</url>
-		</repository>
-	</distributionManagement>
 
 </project>
