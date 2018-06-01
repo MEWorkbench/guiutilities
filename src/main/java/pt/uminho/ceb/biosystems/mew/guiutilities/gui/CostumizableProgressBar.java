@@ -28,9 +28,9 @@ public class CostumizableProgressBar extends JPanel {
 //	protected int imageWidth;
 //	protected int imageHeight;
 	
-	/**
-	 * @wbp.parser.constructor
-	 */
+//	/**
+//	 * @wbp.parser.constructor
+//	 */
 //	public CostumizableProgressBar(int max, String imagePath, int imageWidth, int imageHeight) {
 //		setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 //		Image iconImage;
