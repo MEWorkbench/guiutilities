@@ -1,8 +1,16 @@
 image: maven:latest
 
 stages:
+ - compile
  - test
  - deploy
+ 
+maven_compile:
+  stage: compile
+  tags:
+    - maven
+  script:
+    - mvn compile
  
 maven test:
   stage: test
@@ -20,7 +28,7 @@ maven_deploy:
     #SSH agent
     - 'which ssh-agent || ( apk update  && apk add openssh)'
     - eval $(ssh-agent -s)    
-    - ssh-add <(echo "$SSH_PRIVATE_KEY")    
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
     - mkdir -p ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     #GPG (gnupg)
@@ -35,8 +43,8 @@ maven_deploy:
     - sed -i 's,RELEASE_REPO_KEY,'"$RELEASE_REPO_KEY"',g' configuration.yml
     - sed -i 's,ARTIFACTORY_JCENTER_REPO_KEY,'"$ARTIFACTORY_JCENTER_REPO_KEY"',g' configuration.yml
   script:
-    - ./jfrog rt mvn "clean verify gpg:sign install" configuration.yml --build-name=mew-guiutilities_gitlabci_build --build-number=$CI_JOB_ID
-    - ./jfrog rt bce mew-guiutilities_gitlabci_build $CI_JOB_ID
-    - ./jfrog rt bp mew-guiutilities_gitlabci_build $CI_JOB_ID
+    - ./jfrog rt mvn "clean verify gpg:sign install -DadditionalJOption=-Xdoclint:none" configuration.yml --build-name=solvers_gitlabci_build --build-number=$CI_JOB_ID
+    - ./jfrog rt bce solvers_gitlabci_build $CI_JOB_ID
+    - ./jfrog rt bp solvers_gitlabci_build $CI_JOB_ID
   only:
     - master
