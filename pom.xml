@@ -56,7 +56,7 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<project.sign.skip>true</project.sign.skip>
-		<meworkbench.version>1.1.1-SNAPSHOT</meworkbench.version>
+		<meworkbench.version>1.1.0-SNAPSHOT</meworkbench.version>
 	</properties>
 	
 	<scm>
@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
